@@ -1,6 +1,7 @@
 package com.example.bankservice.service;
 
 import com.example.bankservice.exception.NotEnoughBalanceException;
+import com.example.bankservice.exception.TransactionNotFoundException;
 import com.example.bankservice.exception.UserNotFoundException;
 import com.example.bankservice.model.converter.TransactionConverter;
 import com.example.bankservice.model.converter.UserConverter;
@@ -98,39 +99,51 @@ public class BankService {
                         sender,
                         type)
                 .stream()
-                .map(TransactionConverter::toTransactionDto).collect(Collectors.toList());
+                .map(TransactionConverter::toTransactionDto)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Optional::of))
+                .orElseThrow(TransactionNotFoundException::new);
     }
 
     public List<TransactionDto> findAllTransactionsByName(String sender) {
         return transactionRepository.findBySender(sender)
                 .stream()
-                .map(TransactionConverter::toTransactionDto).collect(Collectors.toList());
+                .map(TransactionConverter::toTransactionDto)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Optional::of))
+                .orElseThrow(TransactionNotFoundException::new);
     }
 
     public List<TransactionDto> findAllTransactionsByNameAndAmount(String name, Integer amount) {
         return transactionRepository.findBySenderAndAmount(name, amount)
                 .stream()
-                .map(TransactionConverter::toTransactionDto).collect(Collectors.toList());
+                .map(TransactionConverter::toTransactionDto)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Optional::of))
+                .orElseThrow(TransactionNotFoundException::new);
     }
 
     public List<TransactionDto> findAllTransactionsByDepositAmount(Integer amount) {
         return transactionRepository.findByAmount(amount)
                 .stream()
-                .map(TransactionConverter::toTransactionDto).collect(Collectors.toList());
+                .map(TransactionConverter::toTransactionDto)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Optional::of))
+                .orElseThrow(TransactionNotFoundException::new);
     }
 
     public List<TransactionDto> findAllTransactionsByNameAndTimestamp(String name, Date date) {
         Timestamp ts = new Timestamp(date.getTime());
         return transactionRepository.findBySenderAndTimestamp(name, ts)
                 .stream()
-                .map(TransactionConverter::toTransactionDto).collect(Collectors.toList());
+                .map(TransactionConverter::toTransactionDto)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Optional::of))
+                .orElseThrow(TransactionNotFoundException::new);
     }
 
     public List<TransactionDto> findAllTransactionsByTimeStamp(Date date) {
         Timestamp ts = new Timestamp(date.getTime());
         return transactionRepository.findByTimestamp(ts)
                 .stream()
-                .map(TransactionConverter::toTransactionDto).collect(Collectors.toList());
+                .map(TransactionConverter::toTransactionDto)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Optional::of))
+                .orElseThrow(TransactionNotFoundException::new);
     }
 
     @Transactional

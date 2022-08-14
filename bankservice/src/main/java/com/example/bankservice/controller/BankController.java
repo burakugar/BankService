@@ -4,7 +4,6 @@ import com.example.bankservice.model.dto.TransactionDto;
 import com.example.bankservice.model.dto.UserDto;
 import com.example.bankservice.model.request.DepositRequest;
 import com.example.bankservice.model.request.TransactionAddRequest;
-import com.example.bankservice.model.request.TransactionGetBySenderNameRequest;
 import com.example.bankservice.model.request.UserAddRequest;
 import com.example.bankservice.model.request.WithdrawRequest;
 import com.example.bankservice.service.BankService;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.security.Timestamp;
 import java.util.Date;
 import java.util.List;
 
