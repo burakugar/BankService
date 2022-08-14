@@ -1,5 +1,6 @@
 package com.example.bankservice.service;
 
+import com.example.bankservice.exception.NegativeDepositBalanceException;
 import com.example.bankservice.exception.NotEnoughBalanceException;
 import com.example.bankservice.exception.TransactionNotFoundException;
 import com.example.bankservice.exception.UserNotFoundException;
@@ -58,6 +59,9 @@ public class BankService {
     public UserDto depositMoney(DepositRequest depositRequest) {
         String name = depositRequest.getName();
         Integer amount = depositRequest.getAmount();
+        if (amount < 0){
+            throw new NegativeDepositBalanceException();
+        }
         saveTheTransactionByDepositRequest(depositRequest);
         return userRepository.findByName(name).map(
                         user -> {

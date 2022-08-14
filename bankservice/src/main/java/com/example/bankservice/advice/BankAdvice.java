@@ -4,6 +4,7 @@ import com.example.bankservice.common.BaseAdvice;
 import com.example.bankservice.common.Error;
 import com.example.bankservice.constant.ErrorCodes;
 import com.example.bankservice.controller.BankController;
+import com.example.bankservice.exception.NegativeDepositBalanceException;
 import com.example.bankservice.exception.NotEnoughBalanceException;
 import com.example.bankservice.exception.TransactionNotFoundException;
 import com.example.bankservice.exception.UserNotFoundException;
@@ -40,6 +41,13 @@ public class BankAdvice extends BaseAdvice {
     @ExceptionHandler(NotEnoughBalanceException.class)
     public ResponseEntity<Error> handleException(NotEnoughBalanceException e) {
         log.error("The balance is not enough for operation!", e);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(constructError(e));
+    }
+
+    @ExceptionHandler(NegativeDepositBalanceException.class)
+    public ResponseEntity<Error> handleException(NegativeDepositBalanceException e) {
+        log.error("Deposit is negative!", e);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(constructError(e));
     }
