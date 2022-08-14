@@ -111,6 +111,23 @@ Filtering with transaction amount:
 <img width="662" alt="image" src="https://user-images.githubusercontent.com/50373019/184543224-1417db4f-ec67-40d3-97a0-626a40c0be5e.png">
 
 
+EXCEPTIONS:
+
+Deposit is negative exception:
+
+<img width="276" alt="image" src="https://user-images.githubusercontent.com/50373019/184543500-016a961c-0baf-4600-b169-997715cffc25.png">
+
+<img width="602" alt="image" src="https://user-images.githubusercontent.com/50373019/184543504-d8b48b08-e5fb-4360-9ed5-fbbc350c9d5c.png">
+
+No user found exception:
+
+If the given id is invalid:
+
+<img width="423" alt="image" src="https://user-images.githubusercontent.com/50373019/184543565-78df278f-5b82-498e-8ab6-f2ca626a17f1.png">
+
+If the balance is not enough for both witdraw or transaction between two user:
+
+<img width="577" alt="image" src="https://user-images.githubusercontent.com/50373019/184543654-ab59e792-a682-46a3-a618-b0ffccdfa7dc.png">
 
 
 
