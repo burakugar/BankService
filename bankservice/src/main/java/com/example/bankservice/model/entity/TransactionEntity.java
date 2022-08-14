@@ -28,12 +28,11 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "transactions")
+@Table(name = "Transactions")
 @EntityListeners(AuditingEntityListener.class)
 public class TransactionEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "transaction_id_generator")
-    @SequenceGenerator(name = "transaction_id_generator", sequenceName = "transaction_sequence_id", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 

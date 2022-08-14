@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: local
+  jpa:
+    show-sql: false
+    open-in-view: true
+  hibernate:
+    ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://localhost:3306/bank
+    username: "root"
+    password: "Heybitch123."
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  springdoc:
+    swagger-ui:
+      disable-swagger-default-url: true
+  session:
+    jdbc:
+      initialize-schema: always
