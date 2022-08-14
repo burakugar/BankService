@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -172,24 +173,24 @@ public class BankService {
 
     @Transactional
     public void saveTheTransactionByDepositRequest(DepositRequest depositRequest) {
-        UserEntity user = userRepository.findByName(depositRequest.getName()).get();
         TransactionEntity entity = TransactionEntity.builder()
                 .type("deposit")
                 .amount(depositRequest.getAmount())
                 .sender(depositRequest.getName())
                 .receivent(depositRequest.getName())
+                .timestamp(Date.from(Instant.now()))
                 .build();
         transactionRepository.save(entity);
     }
 
     @Transactional
     public void saveTheTransactionByWithdrawRequest(WithdrawRequest withdrawRequest) {
-        UserEntity user = userRepository.findByName(withdrawRequest.getName()).get();
         TransactionEntity entity = TransactionEntity.builder()
                 .type("withdraw")
                 .amount(withdrawRequest.getAmount())
                 .sender(withdrawRequest.getName())
                 .receivent(withdrawRequest.getName())
+                .timestamp(Date.from(Instant.now()))
                 .build();
         transactionRepository.save(entity);
     }

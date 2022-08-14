@@ -5,6 +5,9 @@ import com.example.bankservice.model.entity.TransactionEntity;
 import com.example.bankservice.model.request.TransactionAddRequest;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.Instant;
+import java.util.Date;
+
 
 @Slf4j
 public final class TransactionConverter {
@@ -29,6 +32,7 @@ public final class TransactionConverter {
                 .amount(transactionAddRequest.getAmount())
                 .receivent(transactionAddRequest.getReceivent())
                 .sender(transactionAddRequest.getSender())
+                .timestamp(Date.from(Instant.now()))
                 .type(transactionAddRequest.getType())
                 .build();
     }

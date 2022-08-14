@@ -8,6 +8,7 @@ import com.example.bankservice.model.request.UserAddRequest;
 import com.example.bankservice.model.request.WithdrawRequest;
 import com.example.bankservice.service.BankService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,33 +52,33 @@ public class BankController {
         return bankService.addTransaction(transactionRequest);
     }
 
-    @RequestMapping(value = "/transaction/{sender}/{type}", method = RequestMethod.GET)
+    @RequestMapping(value = "/transactions/name-type/{sender}/{type}", method = RequestMethod.GET)
     public List<TransactionDto> getTransactionHistoryWithSenderNameAndType(@PathVariable String sender, @PathVariable String type) {
         return bankService.findAllTransactionsByNameAndType(sender, type);
     }
 
-    @RequestMapping(value = "/transaction/{sender}/{amount}", method = RequestMethod.GET)
+    @RequestMapping(value = "/transactions/name-amount/{sender}/{amount}", method = RequestMethod.GET)
     public List<TransactionDto> getTransactionHistoryWithSenderNameAndAmount(@PathVariable String sender, @PathVariable Integer amount) {
         return bankService.findAllTransactionsByNameAndAmount(sender, amount);
     }
 
-    @RequestMapping(value = "/transaction/{sender}/{date}", method = RequestMethod.GET)
-    public List<TransactionDto> getTransactionHistoryWithSenderNameAndDate(@PathVariable String sender, @PathVariable Date date) {
+    @RequestMapping(value = "/transactions/name-date/{sender}/{date}", method = RequestMethod.GET)
+    public List<TransactionDto> getTransactionHistoryWithSenderNameAndDate(@PathVariable String sender, @PathVariable("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date) {
         return bankService.findAllTransactionsByNameAndTimestamp(sender, date);
     }
 
-    @RequestMapping(value = "/transaction/{sender}", method = RequestMethod.GET)
+    @RequestMapping(value = "/transactions/name/{sender}", method = RequestMethod.GET)
     public List<TransactionDto> getTransactionHistoryWithSenderName(@PathVariable String sender) {
         return bankService.findAllTransactionsByName(sender);
     }
 
-    @RequestMapping(value = "/transaction/{amount}", method = RequestMethod.GET)
+    @RequestMapping(value = "/transactions/amount/{amount}", method = RequestMethod.GET)
     public List<TransactionDto> getTransactionHistoryWithDepositAmount(@PathVariable Integer amount) {
         return bankService.findAllTransactionsByDepositAmount(amount);
     }
 
-    @RequestMapping(value = "/transaction/{date}", method = RequestMethod.GET)
-    public List<TransactionDto> getTransactionHistoryWithDate(@PathVariable Date date) {
+    @RequestMapping(value = "/transactions/date/{date}", method = RequestMethod.GET)
+    public List<TransactionDto> getTransactionHistoryWithDate( @PathVariable("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date) {
         return bankService.findAllTransactionsByTimeStamp(date);
     }
 
