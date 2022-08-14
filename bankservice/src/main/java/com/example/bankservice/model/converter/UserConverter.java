@@ -10,10 +10,6 @@ public final class UserConverter {
         throw new IllegalStateException("Converter Class");
     }
 
-    public static UserEntity toUserEntity(WithdrawRequest withdrawRequest) {
-        return UserEntity.builder()
-                .build();
-    }
 
     public static UserDto toUserDto(UserEntity entity) {
         return UserDto.builder()

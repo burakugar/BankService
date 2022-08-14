@@ -19,4 +19,6 @@ public class TransactionDto implements Serializable {
     private Timestamp timestamp;
     private String receivent;
     private String sender;
+    private Integer amount;
+    private String type;
 }

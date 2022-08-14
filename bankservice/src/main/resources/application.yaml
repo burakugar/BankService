@@ -4,8 +4,9 @@ spring:
   jpa:
     show-sql: false
     open-in-view: true
-  hibernate:
-    ddl-auto: create-drop
+    hibernate:
+      ddl-auto: create
+
   datasource:
     url: jdbc:mysql://localhost:3306/bank
     username: "root"
@@ -14,6 +15,3 @@ spring:
   springdoc:
     swagger-ui:
       disable-swagger-default-url: true
-  session:
-    jdbc:
-      initialize-schema: always

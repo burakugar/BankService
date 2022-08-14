@@ -11,7 +11,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class WithdrawRequest {
-    private String name;
+public class TransactionAddRequest {
+    private String receivent;
+    private String sender;
     private Integer amount;
+    private String type;
 }

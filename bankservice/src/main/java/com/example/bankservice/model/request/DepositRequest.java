@@ -12,6 +12,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class DepositRequest {
-    private Integer id;
+    private String name;
     private Integer amount;
 }

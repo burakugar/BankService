@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.apache.catalina.User;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -15,10 +14,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 
@@ -32,25 +29,25 @@ import java.sql.Timestamp;
 @EntityListeners(AuditingEntityListener.class)
 public class TransactionEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 
     @CreationTimestamp
-    @Column(name = "timestamp", nullable = false, updatable = false)
-    @Size(max = 255, message = "can not be larger than 255")
+    @Column(name = "timestamp", nullable = false)
     private Timestamp timestamp;
 
-    @ManyToOne
-    @JoinColumn(name = "receivent_id")
-    private UserEntity receivent;
-
-    @ManyToOne
-    @JoinColumn(name = "sender_id")
-    private UserEntity sender;
-
-    @Column(name = "amount", nullable = false, updatable = false)
     @Size(min = 0)
+    private String receivent;
+
+    @Size(min = 0)
+    private String sender;
+
+    @Min(value = 0)
     private Integer amount;
+
+    private String type;
+
+    private Integer senderCurrentBalance;
 
 }
