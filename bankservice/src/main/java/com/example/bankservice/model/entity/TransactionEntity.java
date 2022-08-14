@@ -48,6 +48,4 @@ public class TransactionEntity {
 
     private String type;
 
-    private Integer senderCurrentBalance;
-
 }
