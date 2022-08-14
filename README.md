@@ -66,7 +66,7 @@ Response Body:
 
 Let's check both account's balance:
 
-You can either give the id or name of the user for checking the bank account details:
+You can give the id of the user for checking the bank account details:
 
 <img width="1422" alt="image" src="https://user-images.githubusercontent.com/50373019/184541743-ea53ba80-f0e3-4174-b269-ae7b0f7d1262.png">
 
@@ -85,6 +85,31 @@ Filtering with transaction type and name of the sender:
 
 
 <img width="720" alt="image" src="https://user-images.githubusercontent.com/50373019/184541992-30b4e40c-f83b-4368-a3ae-8a8ee6bc52f5.png">
+
+Filtering with transaction DATE and name of the sender:
+
+<img width="1419" alt="image" src="https://user-images.githubusercontent.com/50373019/184542897-701573ab-e7a2-445b-9204-d0cb58a37063.png">
+
+<img width="540" alt="image" src="https://user-images.githubusercontent.com/50373019/184542917-64c9fd28-22c8-46e2-9840-ce9d4faed468.png">
+
+Filtering with transaction amount and name of the sender:
+
+<img width="1413" alt="image" src="https://user-images.githubusercontent.com/50373019/184542936-0af44123-3b4a-45d0-b7b4-b1bd9acdf37f.png">
+
+<img width="352" alt="image" src="https://user-images.githubusercontent.com/50373019/184542955-1cb2a6ea-b3c0-4118-a64e-74536b1bfc7e.png">
+
+Filtering with transaction DATE and name of the sender:
+
+<img width="1431" alt="image" src="https://user-images.githubusercontent.com/50373019/184543042-742ec332-5247-4dea-ba89-bbb68562a5b1.png">
+
+<img width="768" alt="image" src="https://user-images.githubusercontent.com/50373019/184543070-515812ea-f4c0-4ace-acbc-450df6527c62.png">
+
+Filtering with transaction amount:
+
+<img width="711" alt="image" src="https://user-images.githubusercontent.com/50373019/184543088-b0bf5ff7-b378-4abc-bbc4-f9b852f551d4.png">
+
+<img width="662" alt="image" src="https://user-images.githubusercontent.com/50373019/184543224-1417db4f-ec67-40d3-97a0-626a40c0be5e.png">
+
 
 
 
