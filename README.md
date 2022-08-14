@@ -66,5 +66,26 @@ Response Body:
 
 Let's check both account's balance:
 
+You can either give the id or name of the user for checking the bank account details:
+
+<img width="1422" alt="image" src="https://user-images.githubusercontent.com/50373019/184541743-ea53ba80-f0e3-4174-b269-ae7b0f7d1262.png">
+
+<img width="1399" alt="image" src="https://user-images.githubusercontent.com/50373019/184541762-ae944e64-31df-4c8f-8f9a-0585401bc738.png">
+
+Now, let's test the filters:
+
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/50373019/184541954-97c85850-afe7-4ab3-87ed-967aeb48f3a2.png">
+
+
+<img width="1345" alt="image" src="https://user-images.githubusercontent.com/50373019/184541958-e53d3a2c-9b52-4389-8296-f057c70ddc6d.png">
+
+Filtering with transaction type and name of the sender:
+
+<img width="1404" alt="image" src="https://user-images.githubusercontent.com/50373019/184541986-e142f7c5-6a2b-4d1d-97c6-6a14ed14529e.png">
+
+
+<img width="720" alt="image" src="https://user-images.githubusercontent.com/50373019/184541992-30b4e40c-f83b-4368-a3ae-8a8ee6bc52f5.png">
+
+
 
 
