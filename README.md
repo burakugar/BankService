@@ -101,4 +101,9 @@ Filtering with transaction DATE and name of the sender:
 
 <img width="1431" alt="image" src="https://user-images.githubusercontent.com/50373019/184543042-742ec332-5247-4dea-ba89-bbb68562a5b1.png">
 
-<img width="768" alt="image" src="https://user-images.githubusercontent.com/50373019/18
+Filtering with just amount:
+
+<img width="1419" alt="image" src="https://user-images.githubusercontent.com/50373019/184598099-137fcbee-4622-4f86-b6ac-b6f37ef15bf0.png">
+
+<img width="588" alt="image" src="https://user-images.githubusercontent.com/50373019/184598260-383e3a33-d0bb-460c-8834-1d0f2b6fa7b0.png">
+
