@@ -1,24 +1,24 @@
 # BankService
 Installation:
-Install the mysql server on the local machine and make sure it is working on the backend and configure the passwords in application.yml.
+Install the MySQL server on the local machine and make sure it is working on the backend and configure the passwords in application.yml.
 Run maven clean install in the following menu.
 
 <img width="497" alt="image" src="https://user-images.githubusercontent.com/50373019/184540469-bce8b547-0adf-4edb-a4fe-ca9cefaccc02.png">
 
-Go to swagger page:
+Go to the swagger page:
 
 http://localhost:8080/swagger-ui/index.html#/
 
 Implementation details:
 There are two entities in the application.
 1. User:
-Every user have following data fields in database.
+Every user has the following data fields in the database.
 
 <img width="597" alt="image" src="https://user-images.githubusercontent.com/50373019/184540537-08a77639-4a0c-4633-a4e5-806a5a5341bc.png">
 
 transactionEntityList represents the transaction of one user.
 
-Transaction represents a transaction and the "type" of the transaction is configurable, such as:
+The transaction represents a transaction and the "type" of the transaction is configurable, such as:
 "EFT","withdraw","deposit"...
 
 Here are the transaction data fields:
@@ -26,7 +26,7 @@ Here are the transaction data fields:
 <img width="467" alt="image" src="https://user-images.githubusercontent.com/50373019/184541336-440cf5dd-130d-4238-855e-1dc4ac697e70.png">
 
 
-When user withdraws or deposits money from the bank account, this is added to transaction table. In this situation, both sender and receipent will be user's itself.
+When the user withdraws or deposits money from the bank account, this is added to the transaction table. In this situation, both sender and recipient will be users themselves.
 
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/50373019/184541352-c5066bfc-01a3-4c2a-98b7-213202b4987c.png">
 There are 11 endpoints.
@@ -56,7 +56,7 @@ Withdraw money from "burak":
 Response Body:
 <img width="685" alt="image" src="https://user-images.githubusercontent.com/50373019/184541641-1d20d4d4-9042-4f23-adc3-2eabbab09f21.png">
 
-Transaction with type "EFT" from burak to ahmet:
+The transaction with type "EFT" from burak to ahmet:
 
 <img width="1418" alt="image" src="https://user-images.githubusercontent.com/50373019/184541678-46998f6a-e485-4bf8-b51a-ced073744aee.png">
 
@@ -64,8 +64,7 @@ Response Body:
 
 <img width="369" alt="image" src="https://user-images.githubusercontent.com/50373019/184541693-b2900336-3082-42f2-9d27-ebd45cd17ec2.png">
 
-Let's check both account's balance:
-
+Let's check both account's balances:
 You can give the id of the user for checking the bank account details:
 
 <img width="1422" alt="image" src="https://user-images.githubusercontent.com/50373019/184541743-ea53ba80-f0e3-4174-b269-ae7b0f7d1262.png">
@@ -102,32 +101,4 @@ Filtering with transaction DATE and name of the sender:
 
 <img width="1431" alt="image" src="https://user-images.githubusercontent.com/50373019/184543042-742ec332-5247-4dea-ba89-bbb68562a5b1.png">
 
-<img width="768" alt="image" src="https://user-images.githubusercontent.com/50373019/184543070-515812ea-f4c0-4ace-acbc-450df6527c62.png">
-
-Filtering with transaction amount:
-
-<img width="711" alt="image" src="https://user-images.githubusercontent.com/50373019/184543088-b0bf5ff7-b378-4abc-bbc4-f9b852f551d4.png">
-
-<img width="662" alt="image" src="https://user-images.githubusercontent.com/50373019/184543224-1417db4f-ec67-40d3-97a0-626a40c0be5e.png">
-
-
-EXCEPTIONS:
-
-Deposit is negative exception:
-
-<img width="276" alt="image" src="https://user-images.githubusercontent.com/50373019/184543500-016a961c-0baf-4600-b169-997715cffc25.png">
-
-<img width="602" alt="image" src="https://user-images.githubusercontent.com/50373019/184543504-d8b48b08-e5fb-4360-9ed5-fbbc350c9d5c.png">
-
-No user found exception:
-
-If the given id is invalid:
-
-<img width="423" alt="image" src="https://user-images.githubusercontent.com/50373019/184543565-78df278f-5b82-498e-8ab6-f2ca626a17f1.png">
-
-If the balance is not enough for both witdraw or transaction between two user:
-
-<img width="577" alt="image" src="https://user-images.githubusercontent.com/50373019/184543654-ab59e792-a682-46a3-a618-b0ffccdfa7dc.png">
-
-
-
+<img width="768" alt="image" src="https://user-images.githubusercontent.com/50373019/18
