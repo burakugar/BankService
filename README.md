@@ -28,7 +28,7 @@ Here are the transaction data fields:
 
 When the user withdraws or deposits money from the bank account, this is added to the transaction table. In this situation, both sender and recipient will be users themselves.
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/50373019/184541352-c5066bfc-01a3-4c2a-98b7-213202b4987c.png">
+<img width="940" alt="image" src="https://user-images.githubusercontent.com/50373019/184596640-f160c509-843d-46d5-b87e-1946f87c8748.png">
 There are 11 endpoints.
 
 First add the users:
